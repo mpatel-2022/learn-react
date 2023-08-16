@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
@@ -35,7 +35,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   );
 };
 
-const Sidebar1 = () => {
+const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -61,7 +61,7 @@ const Sidebar1 = () => {
         },
       }}
     >
-      <Sidebar collapsed={isCollapsed}>
+      <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -80,7 +80,7 @@ const Sidebar1 = () => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+                  New Hire
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -107,10 +107,10 @@ const Sidebar1 = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Ed Roh
+                  Megha Patel
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
+                  Software Engineer
                 </Typography>
               </Box>
             </Box>
@@ -220,9 +220,9 @@ const Sidebar1 = () => {
             />
           </Box>
         </Menu>
-      </Sidebar>
+      </ProSidebar>
     </Box>
   );
 };
 
-export default Sidebar1;
+export default Sidebar;
